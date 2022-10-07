@@ -18,55 +18,61 @@ const Footer = () => {
     { icon: <EmailIcon />, link: "mailto:francavisokolskis@gmail.com" },
   ];
   return (
-    <Grid
-      container
-      rowGap={3}
-      justifyContent="start"
-      alignItems="center"
+    <Box
       sx={{
         backgroundColor: "#8a817c",
         color: "#F7F0F5",
         p: 4,
       }}
     >
-      <Grid item xs={12} sm={6} md={4}>
-        <Typography
-          sx={{
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            cursor: "pointer",
-            minWidth: "180px",
-          }}
-        >
-          Franca V.
-        </Typography>
+      <Grid
+        container
+        maxWidth="lg"
+        rowGap={3}
+        sx={{margin: '0 auto'}}
+        //justifyContent="start"
+        //alignItems="center"
+      >
+        <Grid item xs={12} sm={6} md={4}>
+          <Typography
+            sx={{
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              cursor: "pointer",
+              minWidth: "180px",
+            }}
+          >
+            Franca V.
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} order={{ md: 3 }}>
+          <Stack
+            flexDirection={"row"}
+            gap={4}
+            justifyContent={isNotSmallerScreen ? "end" : "start"}
+            sx={{marginRight: 4}}
+          >
+            {iconsContact.map((iconObj, i) => (
+              <Box
+                component="a"
+                href={iconObj.link}
+                target="_blank"
+                key={i}
+                sx={{ textDecoration: "none", color: "inherit" }}
+              >
+                {iconObj.icon}
+              </Box>
+            ))}
+          </Stack>
+        </Grid>
+        <Grid item md={4} sx={{ textAlign: "center" }}>
+          <Typography variant="caption" alignSelf={"center"}>
+            2022 | Created and design by Franca Visokolskis
+          </Typography>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={6} md={4} order={{ md: 3 }}>
-        <Stack
-          flexDirection={"row"}
-          gap={4}
-          justifyContent={isNotSmallerScreen ? "end" : "start"}
-        >
-          {iconsContact.map((iconObj, i) => (
-            <Box
-              component="a"
-              href={iconObj.link}
-              target="_blank"
-              key={i}
-              sx={{ textDecoration: "none", color: "inherit" }}
-            >
-              {iconObj.icon}
-            </Box>
-          ))}
-        </Stack>
-      </Grid>
-      <Grid item md={4}>
-        <Typography variant="caption">
-          2022 | Created and design by Franca Visokolskis
-        </Typography>
-      </Grid>
-    </Grid>
+    </Box>
   );
 };
 

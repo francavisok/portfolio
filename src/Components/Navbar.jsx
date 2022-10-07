@@ -42,8 +42,8 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar position="static" >
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography
             variant={isNotSmallerScreen ? "h5" : "h6"}
@@ -51,7 +51,7 @@ const Navbar = () => {
             component="a"
             href="/"
             sx={{
-              ml: 2,
+              //ml: 2,
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
