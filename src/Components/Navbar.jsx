@@ -19,6 +19,7 @@ import {
   FcOpenedFolder,
   FcBusinessContact,
 } from "react-icons/fc";
+import { Padding } from "@mui/icons-material";
 
 //object created to dynamically display tabs on the navbar
 const pages = [
@@ -42,9 +43,9 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" >
-      <Container maxWidth="lg">
-        <Toolbar disableGutters>
+    <AppBar position="static">
+      <Box maxWidth="xl" paddingX={3} sx={{margin: '0 auto', width: '100%' }}>
+        <Toolbar disableGutters >
           <Typography
             variant={isNotSmallerScreen ? "h5" : "h6"}
             noWrap
@@ -111,7 +112,7 @@ const Navbar = () => {
                   }}
                   open={Boolean(anchorElNav)}
                   onClose={handleCloseNavMenu}
-/*                   sx={{
+                  /*                   sx={{
                     display: { xs: "block", md: "none" },
                   }} */
                 >
@@ -126,7 +127,7 @@ const Navbar = () => {
             )}
           </Box>
         </Toolbar>
-      </Container>
+      </Box>
     </AppBar>
   );
 };

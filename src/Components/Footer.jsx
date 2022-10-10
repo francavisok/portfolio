@@ -22,12 +22,12 @@ const Footer = () => {
       sx={{
         backgroundColor: "#8a817c",
         color: "#F7F0F5",
-        p: 4,
+        p: 3,
       }}
     >
       <Grid
         container
-        maxWidth="lg"
+        maxWidth="xl"
         rowGap={3}
         sx={{margin: '0 auto'}}
         //justifyContent="start"
