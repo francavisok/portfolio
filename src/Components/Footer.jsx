@@ -20,8 +20,7 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#8a817c",
-        color: "#F7F0F5",
+        backgroundColor: "#151314",
         p: 3,
       }}
     >
@@ -37,13 +36,20 @@ const Footer = () => {
           <Typography
             sx={{
               fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
+              fontWeight: 900,
+              fontSize: '1.5rem',
+              width: 'fit-content',
+              backgroundColor: '#FFB585',
+              color: '#151314',
+              paddingX: '8px',
+              textShadow: '2px 2px #F5F4EB',
+              
+              //letterSpacing: ".3rem",
               cursor: "pointer",
-              minWidth: "180px",
+              //minWidth: "180px",
             }}
           >
-            Franca V.
+            F
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={4} order={{ md: 3 }}>
@@ -59,7 +65,7 @@ const Footer = () => {
                 href={iconObj.link}
                 target="_blank"
                 key={i}
-                sx={{ textDecoration: "none", color: "inherit" }}
+                sx={{ textDecoration: "none", color: '#f5f5f7', ":hover": { color: "#FFB585", transition: "0.2s" } }}
               >
                 {iconObj.icon}
               </Box>
@@ -68,7 +74,7 @@ const Footer = () => {
         </Grid>
         <Grid item md={4} sx={{ textAlign: "center" }}>
           <Typography variant="caption" alignSelf={"center"}>
-            2022 | Created and design by Franca Visokolskis
+            2022 | Created and designed by Franca Visokolskis
           </Typography>
         </Grid>
       </Grid>
