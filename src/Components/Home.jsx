@@ -14,30 +14,35 @@ const move = keyframes`
 const Home = () => {
   return (
     <Box
+      padding={3}
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: "100%",
+        width: '100%',
         //background: "linear-gradient(45deg, #4C212A, #ACF39D, #EABDA8, #ACF39D)",
         //background: "linear-gradient(45deg, #4C212A, #ACF39D, #24d292)",
+        //background: "linear-gradient(45deg,#d558c8, #24d292)",
+        //background: "linear-gradient(45deg, #4C212A, #8A817C, #ACF39D)",
+        background: "linear-gradient(45deg, #D0E37F, #FFB585)",
 
-        background: "linear-gradient(45deg,#d558c8, #24d292)",
-        backgroundSize: "200%",
-        animation: `${move} 20s infinite alternate`,
+        backgroundSize: "400%",
+        animation: `${move} 5s infinite alternate`,
       }}
     >
-      <Typography
-        variant="h3"
-        sx={{ color: "white", marginBottom: 4}}
-      >
+      <Typography variant="h3" sx={{ color: "#151314", marginBottom: 4, fontWeight: '700', textShadow: '2px 3px #F5F4EB' }}>
         Hi! I'm Franca | FullStack Developer
       </Typography>
       <Typography
-        sx={{ color: "white", fontFamily: "monospace",
-        fontWeight: 400,
-        letterSpacing: ".3rem", }}
+        variant="h6"
+        sx={{
+          color: "#151314",
+          fontFamily: "monospace",
+          fontWeight: 400,
+          letterSpacing: ".3rem",
+        }}
       >
         I love creating fun things
       </Typography>

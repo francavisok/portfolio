@@ -1,0 +1,79 @@
+import React from "react";
+import { Box, Stack } from "@mui/system";
+import { Typography } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import ContactForm from "../Commons/ContactForm";
+
+const Contact = () => {
+  const isNotSmallerScreen = useMediaQuery("(min-width:900px)");
+
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: '100%',
+        backgroundColor: "#151314",
+      }}
+    >
+      <Stack
+        direction={isNotSmallerScreen ? "row" : "column"}
+        width={isNotSmallerScreen ? "65%" : "90%"}
+        height={isNotSmallerScreen ? '90%' : 'auto'}
+        sx={{
+          backgroundColor: "#f5f5f7",
+        }}
+      >
+        <Box
+          height={isNotSmallerScreen ? "100%" : "25%"}
+          minWidth={isNotSmallerScreen ? "40%" : "100%"}
+          sx={{
+            padding: 2,
+            textAlign: "center",
+            rowGap: 4,
+            backgroundColor: "#FFB585",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography
+            variant="h5"
+            sx={{
+              color: "#151314",
+              border: "2px solid #151314",
+              padding: 3,
+              boxShadow: "4px 4px 0 #151314",
+            }}
+          >
+            Let's get in touch
+          </Typography>
+          {isNotSmallerScreen && (
+            <>
+              <Typography sx={{ fontSize: "0.90rem" }}>
+                I'm happy to answer any questions you may have...
+              </Typography>
+              <Typography sx={{ fontSize: "0.90rem" }}>
+                You can also find me in LinkedIn
+              </Typography>
+              <LinkedInIcon sx={{ color: "#151314", ":hover": { fontSize: "2rem", transition: "0.2s"} }} />
+              <Typography sx={{ fontSize: "0.90rem" }}>
+                Or check my work in GitHub
+              </Typography>
+              <GitHubIcon sx={{ color: "#151314", ":hover": { fontSize: "2rem", transition: "0.4s"} }} />
+            </>
+          )}
+        </Box>
+        <Box sx={{width: '100%'}}>
+          <ContactForm />
+        </Box>
+      </Stack>
+    </Box>
+  );
+};
+
+export default Contact;

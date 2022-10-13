@@ -2,21 +2,34 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import { createTheme, ThemeProvider, styled, responsiveFontSizes } from "@mui/material/styles";
 import CssBaseline from '@mui/material/CssBaseline';
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
-      //main: "#4c212a",
-      main: "#5e5a58",
+      main: "#151314",
+      //main: "#5e5a58",
 
     },
     secondary: {
       main: "#acf39d",
     },
   },
+  typography: {
+    fontFamily: [
+      'Ubuntu',
+      'sans-serif',
+    ].join(','),
+    allVariants: {
+      color:  '#F5F4EB',
+    },
+    
+  },
+  
 });
+
+theme = responsiveFontSizes(theme);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

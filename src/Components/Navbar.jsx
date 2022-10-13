@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+//import react-router-dom
+import { Link } from "react-router-dom";
 
 //Material UI imports
 import AppBar from "@mui/material/AppBar";
@@ -8,30 +10,25 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { ListItemIcon } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 //React Icons
-import {
-  FcBusinesswoman,
-  FcOpenedFolder,
-  FcBusinessContact,
-} from "react-icons/fc";
-import { Padding } from "@mui/icons-material";
+import { FaUserCircle, FaFolderOpen } from "react-icons/fa";
+import { MdPermContactCalendar } from "react-icons/md";
 
 //object created to dynamically display tabs on the navbar
 const pages = [
-  { title: "About Me", icon: <FcBusinesswoman /> },
-  { title: "Projects", icon: <FcOpenedFolder /> },
-  { title: "Contact", icon: <FcBusinessContact /> },
+  { title: "About Me", icon: <FaUserCircle />, link: "me" },
+  { title: "Projects", icon: <FaFolderOpen />, link: "projects" },
+  { title: "Contact", icon: <MdPermContactCalendar />, link: "contact" },
 ];
 
-//Menu state and functions to open and close
 const Navbar = () => {
   const isNotSmallerScreen = useMediaQuery("(min-width:900px)");
 
+  //Menu state and functions to open and close
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -44,19 +41,17 @@ const Navbar = () => {
 
   return (
     <AppBar position="static">
-      <Box maxWidth="xl" paddingX={3} sx={{margin: '0 auto', width: '100%' }}>
-        <Toolbar disableGutters >
+      <Box maxWidth="xl" paddingX={3} sx={{ margin: "0 auto", width: "100%" }}>
+        <Toolbar disableGutters>
           <Typography
-            variant={isNotSmallerScreen ? "h5" : "h6"}
             noWrap
             component="a"
             href="/"
             sx={{
-              //ml: 2,
+              fontSize: "1rem",
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
+              //letterSpacing: ".3rem",
               textDecoration: "none",
             }}
           >
@@ -72,19 +67,24 @@ const Navbar = () => {
           >
             {isNotSmallerScreen ? (
               pages.map((page) => (
-                <Button
+                <Link
                   key={page.title}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    py: 2,
-                    px: 4,
-                    color: "white",
-                    display: "block",
-                    ":hover": { color: "#acf39d", transition: "0.4s" },
-                  }}
+                  to={page.link}
+                  style={{ textDecoration: "none", color: "unset" }}
                 >
-                  {page.title}
-                </Button>
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      py: 2,
+                      px: 4,
+                      color: "white",
+                      display: "block",
+                      ":hover": { color: "#FFB585", transition: "0.4s" },
+                    }}
+                  >
+                    {page.title}
+                  </Button>
+                </Link>
               ))
             ) : (
               <>
@@ -117,10 +117,21 @@ const Navbar = () => {
                   }} */
                 >
                   {pages.map((page) => (
-                    <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                      <ListItemIcon>{page.icon}</ListItemIcon>
-                      <Typography textAlign="center">{page.title}</Typography>
-                    </MenuItem>
+                    <Link
+                      key={page.title}
+                      to={page.link}
+                      onClick={handleCloseNavMenu}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <MenuItem>
+                        <ListItemIcon sx={{ color: "#151314" }}>
+                          {page.icon}
+                        </ListItemIcon>
+                        <Typography textAlign="center" color={"#5e5a58"}>
+                          {page.title}
+                        </Typography>
+                      </MenuItem>
+                    </Link>
                   ))}
                 </Menu>
               </>
