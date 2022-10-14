@@ -15,14 +15,14 @@ const Contact = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        width: '100%',
+        width: "100%",
         backgroundColor: "#151314",
       }}
     >
       <Stack
         direction={isNotSmallerScreen ? "row" : "column"}
         width={isNotSmallerScreen ? "65%" : "90%"}
-        height={isNotSmallerScreen ? '90%' : 'auto'}
+        height={isNotSmallerScreen ? "90%" : "auto"}
         sx={{
           backgroundColor: "#f5f5f7",
         }}
@@ -60,15 +60,39 @@ const Contact = () => {
               <Typography sx={{ fontSize: "0.90rem" }}>
                 You can also find me in LinkedIn
               </Typography>
-              <LinkedInIcon sx={{ color: "#151314", ":hover": { fontSize: "2rem", transition: "0.2s"} }} />
+              <Box
+                component="a"
+                href="https://www.linkedin.com/in/franca-visokolskis/"
+                target="_blank"
+                sx={{ textDecoration: "none", color: "#f5f5f7" }}
+              >
+                <LinkedInIcon
+                  sx={{
+                    color: "#151314",
+                    ":hover": { fontSize: "2rem", transition: "0.2s" },
+                  }}
+                />
+              </Box>
               <Typography sx={{ fontSize: "0.90rem" }}>
                 Or check my work in GitHub
               </Typography>
-              <GitHubIcon sx={{ color: "#151314", ":hover": { fontSize: "2rem", transition: "0.4s"} }} />
+              <Box
+                component="a"
+                href="https://github.com/francavisok"
+                target="_blank"
+                sx={{ textDecoration: "none", color: "#f5f5f7" }}
+              >
+                <GitHubIcon
+                  sx={{
+                    color: "#151314",
+                    ":hover": { fontSize: "2rem", transition: "0.4s" },
+                  }}
+                />
+              </Box>
             </>
           )}
         </Box>
-        <Box sx={{width: '100%'}}>
+        <Box sx={{ width: "100%" }}>
           <ContactForm />
         </Box>
       </Stack>
