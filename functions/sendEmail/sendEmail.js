@@ -3,7 +3,7 @@ require("dotenv").config();
 
 exports.handler = function (event, context, callback) {
   //console.log(event);
-  let { name, email, message } = JSON.parse(event.body);
+  const { name, email, message } = JSON.parse(event.body);
 
   // create reusable transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport({
