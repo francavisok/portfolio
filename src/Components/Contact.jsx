@@ -23,12 +23,12 @@ const Contact = () => {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
-          backgroundColor: "#151314",
         }}
       >
         <Stack
           direction={isNotSmallerScreen ? "row" : "column"}
           width={isNotSmallerScreen ? "65%" : "90%"}
+          maxWidth='820px'
           height={isNotSmallerScreen ? "90%" : "auto"}
           sx={{
             backgroundColor: "#f5f5f7",
