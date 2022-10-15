@@ -155,8 +155,8 @@ const ContactForm = () => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Resultado de su pedido"}
+        <DialogTitle id="alert-dialog-title" sx={{color: '#151314'}}>
+          {"Send mail status"}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
