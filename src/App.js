@@ -12,7 +12,7 @@ function App() {
   return (
     <Stack minHeight={"100vh"}>
       <Navbar />
-      <Box flexGrow={1} sx={{display: 'flex', alignItems: 'stretch'}}>
+      <Box flexGrow={1} sx={{display: 'flex', alignItems: 'stretch', backgroundColor: '#151314'}}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='/contact' element={<Contact />} />

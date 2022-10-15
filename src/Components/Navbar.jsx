@@ -71,19 +71,19 @@ const Navbar = () => {
           sx={{ margin: "0 auto", width: "100%" }}
         >
           <Toolbar disableGutters>
-            <Typography
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                fontSize: "1rem",
-                fontFamily: "monospace",
-                fontWeight: 700,
-                textDecoration: "none",
-              }}
-            >
-              {isNotSmallerScreen ? "Franca Visokolskis" : "Franca V."}
-            </Typography>
+            <Link to='/' style={{textDecoration: "none", color: 'unset'}}>
+              <Typography
+                noWrap
+                sx={{
+                  fontSize: "1rem",
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                }}
+              >
+                {isNotSmallerScreen ? "Franca Visokolskis" : "Franca V."}
+              </Typography>
+            </Link>
 
             <Box
               sx={{
@@ -214,7 +214,13 @@ const Navbar = () => {
             download
             sx={{ textDecoration: "none" }}
           >
-            <Button variant="outlined" sx={{":hover": { backgroundColor: "#FFB585", transition: "0.4s" },}} autoFocus>
+            <Button
+              variant="outlined"
+              sx={{
+                ":hover": { backgroundColor: "#FFB585", transition: "0.4s" },
+              }}
+              autoFocus
+            >
               Spanish
             </Button>
           </Box>
@@ -224,7 +230,13 @@ const Navbar = () => {
             download
             sx={{ textDecoration: "none" }}
           >
-            <Button variant="outlined" sx={{":hover": { backgroundColor: "#FFB585", transition: "0.4s" },}} autoFocus>
+            <Button
+              variant="outlined"
+              sx={{
+                ":hover": { backgroundColor: "#FFB585", transition: "0.4s" },
+              }}
+              autoFocus
+            >
               English
             </Button>
           </Box>
