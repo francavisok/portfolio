@@ -28,10 +28,6 @@ const Home = () => {
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        //background: "linear-gradient(45deg, #4C212A, #ACF39D, #EABDA8, #ACF39D)",
-        //background: "linear-gradient(45deg, #4C212A, #ACF39D, #24d292)",
-        //background: "linear-gradient(45deg,#d558c8, #24d292)",
-        //background: "linear-gradient(45deg, #4C212A, #8A817C, #ACF39D)",
         background: "linear-gradient(45deg, #D0E37F, #FFB585)",
 
         backgroundSize: "400%",

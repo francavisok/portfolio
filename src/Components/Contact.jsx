@@ -28,7 +28,7 @@ const Contact = () => {
         <Stack
           direction={isNotSmallerScreen ? "row" : "column"}
           width={isNotSmallerScreen ? "65%" : "90%"}
-          maxWidth='820px'
+          maxWidth="820px"
           height={isNotSmallerScreen ? "90%" : "auto"}
           sx={{
             backgroundColor: "#f5f5f7",
@@ -61,10 +61,10 @@ const Contact = () => {
             </Typography>
             {isNotSmallerScreen && (
               <>
-                <Typography sx={{ fontSize: "0.90rem" }}>
+                <Typography sx={{ fontSize: "0.90rem", color: "#151314" }}>
                   I'm happy to answer any questions you may have...
                 </Typography>
-                <Typography sx={{ fontSize: "0.90rem" }}>
+                <Typography sx={{ fontSize: "0.90rem", color: "#151314" }}>
                   You can also find me in LinkedIn
                 </Typography>
                 <Box
@@ -80,7 +80,7 @@ const Contact = () => {
                     }}
                   />
                 </Box>
-                <Typography sx={{ fontSize: "0.90rem" }}>
+                <Typography sx={{ fontSize: "0.90rem", color: "#151314" }}>
                   Or check my work in GitHub
                 </Typography>
                 <Box

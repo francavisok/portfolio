@@ -99,7 +99,7 @@ const ContactForm = () => {
           label="Name"
           name="name"
           InputLabelProps={{
-            style: {color: 'black'}
+            style: { color: "black" },
           }}
         />
         <TextField
@@ -118,7 +118,7 @@ const ContactForm = () => {
           label="Email"
           name="email"
           InputLabelProps={{
-            style: {color: 'black'}
+            style: { color: "black" },
           }}
         />
         <TextField
@@ -136,7 +136,7 @@ const ContactForm = () => {
           label="Message"
           name="message"
           InputLabelProps={{
-            style: {color: 'black'}
+            style: { color: "black" },
           }}
         />
         <LoadingButton
@@ -154,8 +154,14 @@ const ContactForm = () => {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        // PaperProps={{
+        //   style: { borderRadius: 0 }
+        // }}
+        PaperProps={{
+          style: { padding: '0.5em'  }
+        }}
       >
-        <DialogTitle id="alert-dialog-title" sx={{color: '#151314'}}>
+        <DialogTitle id="alert-dialog-title" sx={{ color: "#151314" }}>
           {"Send mail status"}
         </DialogTitle>
         <DialogContent>
@@ -164,7 +170,16 @@ const ContactForm = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} autoFocus>
+          <Button
+            onClick={handleClose}
+            autoFocus
+            sx={{
+              border: "1px solid #151314",
+              borderRadius: 0,
+              boxShadow: "3px 2px #151314",
+              ":hover": { backgroundColor: "#FFB585", transition: "0.4s" },
+            }}
+          >
             Ok
           </Button>
         </DialogActions>

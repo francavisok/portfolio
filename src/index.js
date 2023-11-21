@@ -24,8 +24,16 @@ let theme = createTheme({
     allVariants: {
       color:  '#F5F4EB',
     },
-    
   },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 0,
+        }
+      }
+    }
+  }
   
 });
 

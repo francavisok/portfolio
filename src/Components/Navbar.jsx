@@ -71,7 +71,7 @@ const Navbar = () => {
           sx={{ margin: "0 auto", width: "100%" }}
         >
           <Toolbar disableGutters>
-            <Link to='/' style={{textDecoration: "none", color: 'unset'}}>
+            <Link to="/" style={{ textDecoration: "none", color: "unset" }}>
               <Typography
                 noWrap
                 sx={{
@@ -108,6 +108,7 @@ const Navbar = () => {
                           color: "white",
                           display: "block",
                           ":hover": { color: "#FFB585", transition: "0.4s" },
+                          ":focus": { color: "#FFB585" },
                         }}
                       >
                         {page.title}
@@ -195,6 +196,9 @@ const Navbar = () => {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        PaperProps={{
+          style: { padding: '0.5em'  }
+        }}
       >
         <DialogTitle
           id="alert-dialog-title"
@@ -217,6 +221,9 @@ const Navbar = () => {
             <Button
               variant="outlined"
               sx={{
+                borderRadius: 0,
+                borderColor: "#151314",
+                boxShadow: "3px 2px #151314",
                 ":hover": { backgroundColor: "#FFB585", transition: "0.4s" },
               }}
               autoFocus
@@ -233,6 +240,9 @@ const Navbar = () => {
             <Button
               variant="outlined"
               sx={{
+                borderRadius: 0,
+                borderColor: "#151314",
+                boxShadow: "3px 2px #151314",
                 ":hover": { backgroundColor: "#FFB585", transition: "0.4s" },
               }}
               autoFocus
