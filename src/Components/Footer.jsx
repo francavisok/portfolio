@@ -32,7 +32,7 @@ const Footer = () => {
         //justifyContent="start"
         //alignItems="center"
       >
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid  xs={12} sm={6} md={4}>
           <Typography
             sx={{
               fontFamily: "monospace",
@@ -52,7 +52,7 @@ const Footer = () => {
             F
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} order={{ md: 3 }}>
+        <Grid  xs={12} sm={6} md={4} order={{ md: 3 }}>
           <Stack
             flexDirection={"row"}
             gap={4}
@@ -72,7 +72,7 @@ const Footer = () => {
             ))}
           </Stack>
         </Grid>
-        <Grid item md={4} sx={{ textAlign: "center" }}>
+        <Grid  md={4} sx={{ textAlign: "center" }}>
           <Typography variant="caption" alignSelf={"center"}>
             2022 | Created and designed by Franca Visokolskis
           </Typography>
