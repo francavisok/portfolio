@@ -57,47 +57,38 @@ const Me = () => {
               src={francaPhoto}
             />
             <Typography
-              variant="h6"
+              variant="h7"
               sx={{
                 color: "#F5F4EB",
                 marginBottom: 4,
-                fontWeight: "700",
+                fontWeight: "600",
               }}
             >
-              I am a Full Stack Developer, Fashion Designer and Downhill |
-              Enduro racer. At first it may seem like a strange mix, but without
-              one of these things in my life I would probably have none.
+              I am a versatile professional, combining skills as a Full Stack
+              Developer with a background in Fashion Design and a passion for
+              Downhill | Enduro racing. Originally from Argentina, Cordoba, I've
+              had the privilege of calling the US, France, and Spain home. My
+              love for travel is deeply intertwined with my desire to reside
+              near the mountains, where I can seamlessly blend my work and
+              favorite sports.
             </Typography>
           </Box>
 
           <Typography>
-            As with Developing, I found mountain biking late in life (2013, 26
-            years old). It is a sport which requires a lot of technique,
-            concentration and dedication. From the first day I fell in love with
-            it and changed my lifestyle completely since I wasn't much of a
-            sports person and by 2019 I became Argentina's downhill champion.
+            Having lived and worked in diverse locations, I've not only honed my
+            technical expertise but also cultivated an appreciation for
+            different languages and cultures. This unique journey allows me to
+            integrate a rich tapestry of experiences into my work.
             <br />
             <br />
-            During 2016 I decided to combine my love for sports and design and
-            created my own clothing brand for MTB. I always liked change and
-            challenges in life, and in 2019 I decided to take a year off to go
-            to France to learn the language. By the time the pandemic arrived I
-            found myself with extra time and decided to try and create a website
-            for my brand. This led me to a series of online courses and the
-            quick realization that programming was a fascinating line of work
-            where I could mix creativity with challenging logic.
-            <br />
-            <br />
-            In late 2021 I made the decision to quit my job and go back to
-            Argentina to attend Plataforma 5 JavaScript coding bootcamp. This
-            course not only taught me everything I wanted to learn but made me
-            grow as a person thanks to the great group of people that were
-            involved. I am now looking for a Front end job where I can
-            contribute everything I've learned from all my experiences and
-            continue to improve in this new passion with the same conviction and
-            dedication as I am used to.
+            As a responsible and sociable individual, I thrive on learning and
+            embrace challenges in my projects. Passion fuels my endeavors, and I
+            take pride in pushing my limits to deliver exceptional results.
           </Typography>
-          <Link to='/contact' style={{textDecoration: "none", color: 'unset'}}>
+          <Link
+            to="/contact"
+            style={{ textDecoration: "none", color: "unset" }}
+          >
             <Typography
               variant="h6"
               sx={{
