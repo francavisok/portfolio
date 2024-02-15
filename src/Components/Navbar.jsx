@@ -2,30 +2,32 @@ import React, { useState } from "react";
 //import react-router-dom
 import { Link } from "react-router-dom";
 //cv imports
-import spanishCV from "../assets/Franca_Visokolskis_Es.pdf";
 import englishCV from "../assets/Franca_Visokolskis_En.pdf";
+import spanishCV from "../assets/Franca_Visokolskis_Es.pdf";
 
 //Material UI imports
+import MenuIcon from "@mui/icons-material/Menu";
+import { ListItemIcon } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { ListItemIcon } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import Divider from "@mui/material/Divider";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 //React Icons
-import { FaUserCircle, FaFolderOpen, FaCloudDownloadAlt } from "react-icons/fa";
+import { FaCloudDownloadAlt, FaFolderOpen, FaUserCircle } from "react-icons/fa";
 import { MdPermContactCalendar } from "react-icons/md";
+
+import { useLocation } from "react-router-dom";
 
 //object created to dynamically display tabs on the navbar
 const pages = [
@@ -36,6 +38,8 @@ const pages = [
 
 const Navbar = () => {
   const isNotSmallerScreen = useMediaQuery("(min-width:900px)");
+  const { pathname } = useLocation();
+  const activeButton = pathname.substring(1);
 
   //Menu state and functions to open and close
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -105,10 +109,10 @@ const Navbar = () => {
                         sx={{
                           py: 2,
                           px: 4,
-                          color: "white",
+                          color:
+                            activeButton === page.link ? "#FFB585" : "white",
                           display: "block",
                           ":hover": { color: "#FFB585", transition: "0.4s" },
-                          ":focus": { color: "#FFB585" },
                         }}
                       >
                         {page.title}
@@ -197,7 +201,7 @@ const Navbar = () => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
         PaperProps={{
-          style: { padding: '0.5em'  }
+          style: { padding: "0.5em" },
         }}
       >
         <DialogTitle
