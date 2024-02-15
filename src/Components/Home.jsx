@@ -12,13 +12,30 @@ const move = keyframes`
 `;
 
 const Home = () => {
-  const [checked, setChecked] = useState(false);
-
   const isNotSmallerScreen = useMediaQuery("(min-width:740px)");
 
+  const [text, setText] = useState("");
+
+  const originalString = "I  love creating fun things";
+
+  const interval = 100;
+
   useEffect(() => {
-    setChecked(true);
-  }, []);
+    const timer = setInterval(() => {
+      setText((prev) => {
+        if (prev.length >= originalString.length) {
+          clearInterval(timer);
+          return prev;
+        }
+        return prev + originalString[prev.length];
+      });
+    }, interval);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [useState]);
+
   return (
     <Box
       padding={3}
@@ -49,30 +66,21 @@ const Home = () => {
         <Typography
           variant={isNotSmallerScreen ? "h6" : "body1"}
           sx={{
+            ":after": {
+              content: '"|"',
+              animation: " blink-caret .75s step-end infinite",
+              "@keyframes blink-caret": {
+                "from, to": { opacity: 0 },
+                "50%": { opacity: 1 },
+              },
+            },
             color: "#151314",
             fontFamily: "monospace",
-            borderRight: ".15em solid #151314",
             fontWeight: 400,
             letterSpacing: ".3rem",
-            overflow: "hidden",
-            whiteSpace: "nowrap",
-            animation:
-              "typing 3s steps(40, end), blink-caret .75s step-end infinite",
-            "@keyframes typing": {
-              from: {
-                width: 0,
-              },
-              to: {
-                width: "100%",
-              },
-            },
-            "@keyframes blink-caret": {
-              "from, to": { borderColor: "transparent" },
-              "50%": { borderColor: "#151314" },
-            },
           }}
         >
-          I love creating fun things
+          {text}
         </Typography>
       </Box>
     </Box>
@@ -80,3 +88,4 @@ const Home = () => {
 };
 
 export default Home;
+// I love creating fun things
