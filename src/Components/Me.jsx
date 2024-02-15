@@ -99,6 +99,9 @@ const Me = () => {
                 padding: 2,
                 border: "2px solid #FFB585",
                 boxShadow: "8px 7px #FFB585",
+                transition: "0.4s",
+                ":hover": { fontSize: "1.5rem", transition: "0.4s" },
+                
               }}
             >
               Let's talk !

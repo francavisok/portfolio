@@ -76,7 +76,8 @@ const Contact = () => {
                   <LinkedInIcon
                     sx={{
                       color: "#151314",
-                      ":hover": { fontSize: "2rem", transition: "0.2s" },
+                      transition: "0.3s",
+                      ":hover": { fontSize: "2rem", transition: "0.3s" },
                     }}
                   />
                 </Box>
@@ -92,7 +93,8 @@ const Contact = () => {
                   <GitHubIcon
                     sx={{
                       color: "#151314",
-                      ":hover": { fontSize: "2rem", transition: "0.4s" },
+                      transition: "0.3s" ,
+                      ":hover": { fontSize: "2rem", transition: "0.3s" },
                     }}
                   />
                 </Box>
