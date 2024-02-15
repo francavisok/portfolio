@@ -1,11 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { Box, Stack } from "@mui/system";
-import { Typography } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import ContactForm from "../Commons/ContactForm";
+import { Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { Box, Stack, keyframes } from "@mui/system";
+import React, { useEffect, useState } from "react";
+import ContactForm from "../Commons/ContactForm";
+
+const move = keyframes`
+0% {
+  backgroun-position: left;
+}
+100% {
+  background-position: right;
+}
+`;
 
 const Contact = () => {
   const isNotSmallerScreen = useMediaQuery("(min-width:900px)");
@@ -27,7 +36,6 @@ const Contact = () => {
       >
         <Stack
           direction={isNotSmallerScreen ? "row" : "column"}
-          width={isNotSmallerScreen ? "65%" : "90%"}
           maxWidth="820px"
           height={isNotSmallerScreen ? "90%" : "auto"}
           sx={{
@@ -38,65 +46,72 @@ const Contact = () => {
             height={isNotSmallerScreen ? "100%" : "25%"}
             minWidth={isNotSmallerScreen ? "40%" : "100%"}
             sx={{
-              padding: 2,
-              textAlign: "center",
+              paddingY: isNotSmallerScreen ? 2 : 4,
+              paddingX: 6,
               rowGap: 4,
-              backgroundColor: "#FFB585",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
+              alignItems: isNotSmallerScreen ? "flex-start" : "center",
               justifyContent: "center",
+              background: "linear-gradient(45deg, #D0E37F, #FFB585)",
+              backgroundSize: "400%",
+              animation: `${move} 5s infinite alternate`,
             }}
           >
             <Typography
-              variant="h5"
+              variant={isNotSmallerScreen ? "h3" : "h4"}
               sx={{
                 color: "#151314",
-                border: "2px solid #151314",
-                padding: 3,
-                boxShadow: "4px 4px 0 #151314",
+                marginBottom: isNotSmallerScreen ? 4 : 0,
+                fontWeight: "700",
+                textShadow: "2px 3px #F5F4EB",
+                // textAlign:'start',
               }}
             >
-              Let's get in touch
+              Would love to hear from you.
             </Typography>
             {isNotSmallerScreen && (
               <>
-                <Typography sx={{ fontSize: "0.90rem", color: "#151314" }}>
-                  I'm happy to answer any questions you may have...
-                </Typography>
-                <Typography sx={{ fontSize: "0.90rem", color: "#151314" }}>
-                  You can also find me in LinkedIn
-                </Typography>
                 <Box
                   component="a"
                   href="https://www.linkedin.com/in/franca-visokolskis/"
                   target="_blank"
-                  sx={{ textDecoration: "none", color: "#f5f5f7" }}
+                  sx={{
+                    textDecoration: "none",
+                    color: "#f5f5f7",
+                    display: "flex",
+                    gap: 1,
+                  }}
                 >
                   <LinkedInIcon
                     sx={{
                       color: "#151314",
-                      transition: "0.3s",
-                      ":hover": { fontSize: "2rem", transition: "0.3s" },
                     }}
                   />
+                  <Typography sx={{ fontSize: "0.90rem", color: "#151314" }}>
+                    Visit my LinkedIn.
+                  </Typography>
                 </Box>
-                <Typography sx={{ fontSize: "0.90rem", color: "#151314" }}>
-                  Or check my work in GitHub
-                </Typography>
+
                 <Box
                   component="a"
                   href="https://github.com/francavisok"
                   target="_blank"
-                  sx={{ textDecoration: "none", color: "#f5f5f7" }}
+                  sx={{
+                    textDecoration: "none",
+                    color: "#f5f5f7",
+                    display: "flex",
+                    gap: 1,
+                  }}
                 >
                   <GitHubIcon
                     sx={{
                       color: "#151314",
-                      transition: "0.3s" ,
-                      ":hover": { fontSize: "2rem", transition: "0.3s" },
                     }}
                   />
+                  <Typography sx={{ fontSize: "0.90rem", color: "#151314" }}>
+                    Or check out my work on GitHub.
+                  </Typography>
                 </Box>
               </>
             )}
